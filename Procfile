@@ -1,1 +1,2 @@
-web:node server.js
+web: npm init;
+     npm start
