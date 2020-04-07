@@ -1,2 +1,2 @@
-web: npm init;
+web: npm install;
      npm start
