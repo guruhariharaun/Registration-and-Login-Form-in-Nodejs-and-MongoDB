@@ -1,4 +1,5 @@
 var express = require('express');
+var env = require('dotenv').config()
 var ejs = require('ejs');
 var path = require('path');
 var app = express();
@@ -58,7 +59,7 @@ app.use(function (err, req, res, next) {
 });
 
 
-let port = process.env.port || 3000;
-app.listen(port, function () {
-  console.log('Server is started on http:127.0.0.1:'+port);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function () {
+  console.log('Server is started on http:127.0.0.1:'+PORT);
 });
