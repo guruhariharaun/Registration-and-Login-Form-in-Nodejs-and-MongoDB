@@ -71,7 +71,7 @@ At line 11 on ```./server.js``` change ***```<DB_USERNAME>```*** with your DataB
 
 ## To Run the App
 ```
-nodemon server.js
+node server.js
 ```
 
 The server will start Running on
