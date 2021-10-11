@@ -94,5 +94,5 @@ The server will start Running on
 <div align="center">
 <a href="https://www.buymeacoffee.com/YwGKcxa" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a></div>
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/guruhariharaun">Guru Roxz</a>
+  Made with ❤️ by <a href="https://github.com/brightensolutions">Brighten Solutions</a>
 </p>
