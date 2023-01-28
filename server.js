@@ -9,7 +9,7 @@ var session = require("express-session");
 var MongoStore = require("connect-mongo")(session);
 
 mongoose.connect(
-  "mongodb+srv://reevefernandes:reevefernandes@user.xsgdtnv.mongodb.net/?retryWrites=true&w=majority",
+  "mongodb+srv://reevefernandes:reevefernandes@user.euxxkgl.mongodb.net/?retryWrites=true&w=majority",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
