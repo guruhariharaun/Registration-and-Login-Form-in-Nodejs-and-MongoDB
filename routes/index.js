@@ -78,6 +78,11 @@ router.post("/login", function (req, res, next) {
   });
 });
 
+// map rendered
+router.get("/map", function (req, res, next) {
+  return res.render("map.ejs");
+});
+
 router.get("/profile", function (req, res, next) {
   console.log("profile");
   User.findOne({ unique_id: req.session.userId }, function (err, data) {
