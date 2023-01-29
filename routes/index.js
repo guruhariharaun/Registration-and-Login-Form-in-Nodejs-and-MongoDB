@@ -109,9 +109,30 @@ router.post("/report", function (req, res, next) {
 // map rendered
 router.get("/map", function (req, res, next) {
   Report.find({}, function (err, data) {
-    console.log(data);
+    let geojson = {
+      type: "FeatureCollection",
+      features: []
+    };
+
+    for (let i = 0; i < data.length; i++){
+      geojson.features.push({
+        type: "Feature",
+        geometry: {
+          type: "Point",
+          coordinates: [Number(data[i].lat), Number(data[i].lon) ]
+        },
+        properties: {
+          title: "Report",
+          description: data[i].comments
+        }
+      })
+    }
+    console.log([Number(data[0].lat), Number(data[0].lon) ]);
+    console.log((geojson));
+    // console.log(geojson.features[1].geometry);
+    return res.render("map.ejs", {'geojson' : JSON.stringify(geojson)});
   })
-  return res.render("map.ejs", {location: data});
+  
 });
 
 // report page rendered
