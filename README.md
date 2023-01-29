@@ -1,98 +1,35 @@
-<h1 align="center">
-    <b>User Registration & Login systems in<br> Node.js using MongoDB </b> 
-<br>
-</h1>
+## Inspiration
+We were inspired by the need for a more comprehensive and user-friendly navigation system for city dwellers. With the increasing crime rates and the need for a safe navigation experience, we decided to create CityBuddy, a one-stop solution for all your navigation needs.
 
+## What it does
+CityBuddy is a cutting-edge navigation system that makes city travel a breeze. With its intuitive user interface and advanced features, CityBuddy is the perfect companion for city dwellers and travelers alike. Not only does it provide accurate turn-by-turn directions, but it also keeps you informed about the safety of the areas you're travelling to, with real-time updates (on weather) and user-generated safety reports.
 
-<p align="center">
-  <a href="/LICENSE"><img src="https://img.shields.io/github/license/guruhariharaun/Registration-and-Login-Form-in-Nodejs-and-MongoDB.svg?style=flat-square"></a>
-</p>
+## How we built it
+Our development team utilized Node.js servers, MongoDB, and Mapbox to create a powerful platform that aims to provide users with accurate turn-by-turn directions, real-time weather updates.
 
+CityBuddy also offers a unique feature where users can report and view areas that are deemed unsafe, allowing others to make informed decisions about the route they take. The platform is user-driven, with reports generated based on user input. However, we have plans to expand on this by using web scraping and AI/ML to further enhance the platform's capabilities.
 
-## What is this for?
-This is a Simple User Registration & Login systems app done with Node.js Framework using MongoDB(Atlas) as the data store, Express as the routing system, Body-parser as the parser for webpage, Express-session used  to track the user's session and of course Mongoose to make interacting with Mongo from Node easy.
+The user-friendly interface of CityBuddy was designed using Adobe XD and built using HTML, CSS, and JavaScript, ensuring that users have a seamless experience. Additionally, we integrated Google's API for geocoding, making it easy for users to report incidents.
 
-## Getting Started
+## Challenges we ran into
+CityBuddy was built to solve the challenges faced by city dwellers while navigating their surroundings. Despite its potential, our development team faced several challenges while building the platform.
 
-### Deployment
-This Project is **[Live](https://reg-login-using-nodejs-mongodb.herokuapp.com/)** on: 🌍 **https://reg-login-using-nodejs-mongodb.herokuapp.com/**
+**Integrating all the different technologies** such as Node.js, MongoDB, Mapbox, and Google's API was a complex process, requiring a great deal of coordination and effort to ensure that everything worked seamlessly.
 
-## Running the tests
+Making **custom markers** on the map was a challenging task, as we encountered issues with the object not parsing and not functioning as expected.
 
-### •Registration Form:
-Allows the user to register their account by filling their Email, Username, Password.
+**Time constraints** were a significant challenge as CityBuddy is a massive project that required a lot of resources and dedication to complete. Despite these challenges, our team was determined to deliver a platform that provides users with a fast and reliable way to navigate the city.
 
-<img src="./docs/registration.PNG" height="250" width="390" style="border: 1px solid black;">
+## Accomplishments that we're proud of
+**Our commitment to the Spartan community**: CityBuddy was designed with the Spartan city dweller in mind, and we are proud to have created a platform that helps people navigate their surroundings with ease and confidence.
 
-### •Login Form:
-If the user has been registered on the app, can login by passing the credentials.
+**The User Interface**: We are proud of the UI that we developed for CityBuddy, which is intuitive, user-friendly, and aesthetically pleasing.
 
-<img src="./docs/login.PNG" height="220" width="390" style="border: 1px solid black;">
+## What we learned
+**Working with APIs**: Integrating various APIs, such as the Mapbox API for navigation and the Google API for geocoding, was a key aspect of building CityBuddy. Through this process, we gained valuable experience in working with APIs and learned how to effectively utilize their capabilities.
 
-### •User's Profile:
-After the user logged in, a simple profile with the user's username and password <br>displayed with a session Logout button.
+**Understanding Backend Development**: Building CityBuddy required a strong understanding of backend development. We learned how to set up and work with servers, databases, and other backend components, which will be valuable skills in future projects.
 
-<img src="./docs/data.PNG" height="160" width="380" style="border: 1px solid black;">
+## What's next for CityBuddy
+The future of CityBuddy is bright and full of exciting possibilities. Our goal is to create the ultimate navigation and safety companion for city-goers. To achieve this, we are working on several initiatives. Firstly, we plan to develop CityBuddy as a native mobile app for both iOS and Android, making it accessible to users on the go. Secondly, we aim to improve the accuracy and reliability of our data by implementing web scraping to gather information from various sources, which will then be analyzed using AI/ML to categorize the safety of different locations.
 
-### •Password Reset:
-If the user forget his/her password, can reset by entering the registered Email id <br>and reset the password.
-
-<img src="./docs/forgetpass.PNG" height="200" width="400" style="border: 1px solid black;">
-
-### DataBase:
-Here we use **[MongoDB Atlas(Cloud)](https://www.mongodb.com/cloud/atlas)** as the database. Here we have two collection created, named as:
-- users.
-- sessions.
-
-A Collection(**Users**) is populated with the user's credentials.
-
-<img src="./docs/userdb.PNG" height="300" width="720" style="border: 1px solid black;"><br><br>
-
-A Collection(**session**) is created which stores the users Logged session.
-
-<img src="./docs/sessiondb.PNG" height="300" width="720" style="border: 1px solid black;">
-<br>
-<br>
-<br>
-
-## Prerequisites
-Tools that we need to run this app:
-
-- ***[Node.js](https://nodejs.org/en/)***
-- ***[Node Package Manager](https://www.npmjs.com/get-npm)***
-- ***[MongoDB (Atlas)](https://www.mongodb.com/cloud/atlas)***
-
-## Installing
-```
-npm install
-```
-## Connection to DataBase Access
-At line 11 on ```./server.js``` change ***```<DB_USERNAME>```*** with your DataBase UserName & ***```<DB_PASSWORD>```*** with your DataBase Password.
-
-## To Run the App
-```
-node server.js
-```
-
-The server will start Running on
-+ http://localhost:3000/
-
-
-## Author
-
-| Author                | Profile Link                                       |
-| --------------------- | :------------------------------------------------- |
-| **Guru HariHaraun N** | **[Guru Roxz](https://github.com/guruhariharaun)** |
-
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used.
-* Special mention to all the Nodejs dev's on youtube 😜
-
-<br><br>
-<div align="center">
-<a href="https://www.buymeacoffee.com/YwGKcxa" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a></div>
-<p align="center">
-  Made with ❤️ by <a href="https://github.com/guruhariharaun">Guru Roxz</a>
-</p>
