@@ -29,4 +29,5 @@ function setupMap(center) {
   });
 
   map.addControl(directions, "top-left");
+  map.addControl(geolocate);
 }

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbSbeLaTSo8-p8jxgihdaB8jSJWV1a5hY&libraries=places&callback=initMap"
+    ></script>
+
+    <input type="text" id="autocomplete" placeholder="Enter a place" />
+
+    <script>
+      let autocomplete;
+      function initAutocomplete() {
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById("autocomplete")
+          //   {
+          //     type: ["geocode", "address"],
+          //     componentRestrictions: {
+          //       country: ["US"],
+          //     },
+          //     fields: ["PlaceGeometry"],
+          //   }
+        );
+      }
+    </script>
+  </body>
+</html>
