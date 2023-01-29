@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var User = require("../models/user");
+var Report = require("../models/reports");
 
 router.get("/", function (req, res, next) {
   return res.render("index.ejs");
@@ -77,6 +78,33 @@ router.post("/login", function (req, res, next) {
     }
   });
 });
+
+router.post("/report", function (req, res, next) {
+  console.log(req.body);
+  var c;
+  Report.findOne({}, function (err, data) {
+    if (data) {
+      console.log("if");
+      c = data.report_id + 1;
+    } else {
+      c = 1;
+    }
+
+    var newReport = new Report({
+      report_id: c,
+      user_id: req.session.userId,
+      lat: req.body.lat,
+      lon: req.body.lon,
+      day: req.body.day,
+      comments: req.body.comments,
+    });
+
+    newReport.save(function (err, Report) {
+      if (err) console.log(err);
+      else console.log("Success");
+    });
+});}
+)
 
 // map rendered
 router.get("/map", function (req, res, next) {

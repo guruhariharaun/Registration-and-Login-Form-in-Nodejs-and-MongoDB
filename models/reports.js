@@ -1,15 +1,14 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-(reportsSchema = new Schema({
-  location_id: Number,
-  unique_id: Number,
-  lat: Number,
-  lon: Number,
-  day: Date,
-  safeness_rate: String,
+(reportSchema = new Schema({
+  report_id: Number,
+  user_id: Number,
+  lat: String,
+  lon: String,
+  day: String,
   comments: String,
 })),
-  (Reports = mongoose.model("Reports", reportsSchema));
+  (Report = mongoose.model("Report", reportSchema));
 
-module.exports = Reports;
+module.exports = Report;

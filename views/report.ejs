@@ -4,30 +4,106 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <title>Document</title>
+
   </head>
   <body>
+    
+
+    <div class="form-group">
+			<form id="form3" method="post" >
+				<input type="text" id="autocomplete" placeholder="Enter a place" />
+        <br/>
+				<input type="date" name="date" placeholder="Date" required="" class="form-control"><br/>
+        <input type="text" id="desc" placeholder="Tell us more..." /> <br/>
+				<input type="submit" value="Submit" class="btn btn-success">
+			</form>
+		</div>
+
+    <div class="mssg bg-danger">
+			<span id="check" ></span>
+		</div>
+		<div id="LangTable"><a href="http:/map" id="aa"></a>
+		</div>
+
+   
+
+
+
     <script
       async
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbSbeLaTSo8-p8jxgihdaB8jSJWV1a5hY&libraries=places&callback=initMap"
     ></script>
-
-    <input type="text" id="autocomplete" placeholder="Enter a place" />
-
     <script>
+      let floorLatitude;
+      let floorLongitude;
       let autocomplete;
-      function initAutocomplete() {
+      function initMap() {
         autocomplete = new google.maps.places.Autocomplete(
-          document.getElementById("autocomplete")
-          //   {
-          //     type: ["geocode", "address"],
-          //     componentRestrictions: {
-          //       country: ["US"],
-          //     },
-          //     fields: ["PlaceGeometry"],
-          //   }
+          document.getElementById('autocomplete'),
+          {
+            types: ['address'],
+            componentRestrictions: {
+              'country': ["US"]
+            },
+            fields: ['geometry']
+          }
         );
+
+        autocomplete.addListener('place_changed', onPlaceChanged);
       }
+
+      function onPlaceChanged() {
+        
+        var place = autocomplete.getPlace();
+
+        if(place.geometry && place.geometry.location) {
+          let latitude = place.geometry.location.lat();
+          let longitude = place.geometry.location.lng();
+          floorLatitude = (latitude);
+          floorLongitude = (longitude);
+        }
+
+      }
+
+      $(document).ready(function(){
+
+        $( "#form3" ).submit(function(event) {
+          event.preventDefault();
+
+          $.ajax({
+            type: 'POST',
+            url: '/report',
+            data: "lat=" + floorLatitude.toString() + "&lon=" + floorLongitude.toString() +"&" +$('#form3').serialize() + "&comments=" + $("#desc").val(),
+            dataType: "json",
+            success: function(response){
+              alert("a");
+              console.log(response.Success);
+              $('#form3')[0].reset();
+
+              document.getElementById("aa").click();
+
+              document.getElementById("check").innerHTML=response.Success;
+                    //ADD THIS CODE
+                    // setTimeout(function(){
+                    //   document.getElementById("check").innerHTML="";
+                    // },3000);
+                    if (response.Success=="Success!") {
+                      document.getElementById("aa").click();
+                    };
+                  },
+                  error: function() {
+                  }
+                })
+        })
+
+      });
     </script>
+    
   </body>
 </html>
