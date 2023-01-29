@@ -26,6 +26,15 @@
         height: 100vh;
         width: 100vw;
       }
+
+      .marker {
+        background-image: url('../docs/mapbox-icon.png');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
     </style>
     <script src="./js/script.js" defer></script>
   </head>
@@ -38,5 +47,22 @@
       <a href="http:/profile">Profile </a>
     </button>
     <div id="map"></div>
+
+  
+
+    <script>
+    const json = '<%= geojson %>';
+    console.log(json);
+    const test = JSON.parse(json); 
+      // add markers to map
+      for (const feature of test.features) {
+        // create a HTML element for each feature
+        const el = document.createElement('div');
+        el.className = 'marker';
+
+        // make a marker for each feature and add to the map
+        new mapboxgl.Marker(el).setLngLat(feature.geometry.coordinates).addTo(map);
+      }
+    </script>
   </body>
 </html>
