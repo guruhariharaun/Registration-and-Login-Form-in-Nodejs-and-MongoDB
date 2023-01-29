@@ -108,14 +108,14 @@ router.post("/report", function (req, res, next) {
 
 // map rendered
 router.get("/map", function (req, res, next) {
+  Report.find({}, function (err, data) {
+    console.log(data);
+  })
   return res.render("map.ejs");
 });
 
 // report page rendered
 router.get("/report", function (req, res, next) {
-  Report.find({}, function (err, data) {
-    console.log(data);
-  })
   return res.render("report.ejs");
 });
 
