@@ -113,6 +113,9 @@ router.get("/map", function (req, res, next) {
 
 // report page rendered
 router.get("/report", function (req, res, next) {
+  Report.find({}, function (err, data) {
+    console.log(data);
+  })
   return res.render("report.ejs");
 });
 
