@@ -33,3 +33,4 @@ Making **custom markers** on the map was a challenging task, as we encountered i
 ## What's next for CityBuddy
 The future of CityBuddy is bright and full of exciting possibilities. Our goal is to create the ultimate navigation and safety companion for city-goers. To achieve this, we are working on several initiatives. Firstly, we plan to develop CityBuddy as a native mobile app for both iOS and Android, making it accessible to users on the go. Secondly, we aim to improve the accuracy and reliability of our data by implementing web scraping to gather information from various sources, which will then be analyzed using AI/ML to categorize the safety of different locations.
 
+
